@@ -1,6 +1,10 @@
 name: 'Auto Release Milestone'
 description: 'Drafts a GitHub release based on a newly closed milestone'
 author: 'Daniela'
+inputs:
+  repo-token:
+    description: 'Github secret'
+    required: true
 outputs:
   release-url:
     description: 'The URL of the GitHub release that was drafted'
