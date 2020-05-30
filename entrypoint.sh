@@ -6,6 +6,10 @@ set -u
 # save value of repo token into a variable (its first param passed to script as per action metadata args)
 repo_token=$1
 
+# just curious what's in here
+curious=$(ls -alt /github/workspace)
+echo "::warning::Contents '$curious'"
+
 # verify this action got trigerred by a milestone event
 # use of debug logging command means this will only show in build log when debug is enabled
 if [ "$GITHUB_EVENT_NAME" != "milestone" ]; then
