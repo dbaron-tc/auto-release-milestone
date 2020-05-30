@@ -9,7 +9,7 @@ repo_token=$1
 # verify this action got trigerred by a milestone event
 # use of debug logging command means this will only show in build log when debug is enabled
 if [ "$GITHUB_EVENT_NAME" != "milestone" ]; then
-  echo "::debug::The event name was '$GITHUB_EVENT_NAME'"
+  echo "::info::The event name was '$GITHUB_EVENT_NAME'"
   exit 0
 fi
 
@@ -19,7 +19,7 @@ event_type=$(jq --raw-output .action $GITHUB_EVENT_PATH)
 
 # check for closed milestone
 if [ $event_type != "closed" ]; then
-  echo "::debug::The event type was '$event_type'"
+  echo "::info::The event type was '$event_type'"
   exit 0
 fi
 
